@@ -1,0 +1,163 @@
+{
+    "employees": [
+      {
+        "empId": "E1",
+        "name": "Alice",
+        "skills": [{"skillName": "python", "level": 4}],
+        "availabilityPatterns": [{"type": "weekly", "days": [0,1,2,3,4], "startTime": "09:00", "endTime": "17:00"}],
+        "employmentType": "full-time",
+        "shiftPreference": "day",
+        "gender": "female"
+      },
+      {
+        "empId": "E2",
+        "name": "Bob",
+        "skills": [{"skillName": "ml", "level": 3}, {"skillName": "python", "level": 2}],
+        "availabilityPatterns": [{"type": "weekly", "days": [1,2,3,4,5], "startTime": "12:00", "endTime": "20:00"}],
+        "employmentType": "part-time",
+        "shiftPreference": "flexible",
+        "gender": "male"
+      },
+      {
+        "empId": "E3",
+        "name": "Charlie",
+        "skills": [{"skillName": "data-analysis", "level": 4}],
+        "availabilityPatterns": [{"type": "weekly", "days": [0,1,2,4], "startTime": "08:00", "endTime": "16:00"}],
+        "employmentType": "intern",
+        "shiftPreference": "day",
+        "gender": "male"
+      },
+      {
+        "empId": "E4",
+        "name": "Diana",
+        "skills": [{"skillName": "ml", "level": 5}, {"skillName": "data-analysis", "level": 3}],
+        "availabilityPatterns": [{"type": "weekly", "days": [2,3,4,5], "startTime": "10:00", "endTime": "18:00"}],
+        "employmentType": "full-time",
+        "shiftPreference": "flexible",
+        "gender": "female"
+      },
+      {
+        "empId": "E5",
+        "name": "Ethan",
+        "skills": [{"skillName": "python", "level": 3}, {"skillName": "ui-design", "level": 4}],
+        "availabilityPatterns": [{"type": "weekly", "days": [0,1,2,3,4], "startTime": "09:00", "endTime": "17:00"}],
+        "employmentType": "full-time",
+        "shiftPreference": "day",
+        "gender": "male"
+      }
+    ],
+    "rules": [
+      {
+        "ruleType": "workingHours",
+        "value": {"day": [0,1,2,3,4], "start": "09:00", "end": "17:00"},
+        "isActive": true
+      },
+      {
+        "ruleType": "maxConsecutiveDays",
+        "value": {"days": 5},
+        "isActive": true
+      }
+    ],
+    "tasks": [
+      {
+        "taskId": "T1",
+        "name": "Task 1",
+        "requiredSkills": [{"skillName": "ui-design", "minLevel": 3}],
+        "estimatedDurationHours": 24,
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T2",
+        "name": "Task 2",
+        "requiredSkills": [{"skillName": "python", "minLevel": 4}],
+        "estimatedDurationHours": 24,
+        "priority": "low",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T3",
+        "name": "Task 3",
+        "requiredSkills": [{"skillName": "data-analysis", "minLevel": 3}],
+        "estimatedDurationHours": 32,
+        "priority": "low",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T4",
+        "name": "Task 4",
+        "requiredSkills": [{"skillName": "ml", "minLevel": 2}],
+        "estimatedDurationHours": 32,
+        "priority": "low",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T5",
+        "name": "Task 5",
+        "requiredSkills": [{"skillName": "python", "minLevel": 3}],
+        "estimatedDurationHours": 40,
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T6",
+        "name": "Task 6",
+        "requiredSkills": [{"skillName": "ml", "minLevel": 2}],
+        "estimatedDurationHours": 40,
+        "priority": "high",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T7",
+        "name": "Task 7",
+        "requiredSkills": [{"skillName": "data-analysis", "minLevel": 3}],
+        "estimatedDurationHours": 24,
+        "priority": "high",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T8",
+        "name": "Task 8",
+        "requiredSkills": [{"skillName": "python", "minLevel": 3}],
+        "estimatedDurationHours": 56,
+        "priority": "high",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T9",
+        "name": "Task 9",
+        "requiredSkills": [{"skillName": "ui-design", "minLevel": 2}],
+        "estimatedDurationHours": 56,
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T10",
+        "name": "Task 10",
+        "requiredSkills": [{"skillName": "python", "minLevel": 3}],
+        "estimatedDurationHours": 48,
+        "priority": "medium",
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T11",
+        "name": "Task 11",
+        "requiredSkills": [{"skillName": "ml", "minLevel": 3}],
+        "estimatedDurationHours": 40,
+        "priority": "low",
+        "status": "pending",
+        "dependencies": []
+      }
+    ]
+  }
+  

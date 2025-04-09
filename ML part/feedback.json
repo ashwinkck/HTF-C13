@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+
+const FeedbackForm = ({ taskId, assignedEmployeeId }) => {
+  const [selectedEmployee, setSelectedEmployee] = useState(assignedEmployeeId);
+  const [wasSuccessful, setWasSuccessful] = useState(true);
+  const [message, setMessage] = useState("");
+
+  const submitFeedback = async () => {
+    const feedback = {
+      task_id: taskId,
+      employee_id: selectedEmployee,
+      assigned_employee_id: assignedEmployeeId,
+      was_successful: wasSuccessful,
+    };
+
+    try {
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(feedback),
+      });
+
+      const result = await res.json();
+      setMessage(result.message || "Feedback submitted!");
+    } catch (err) {
+      console.error("Error submitting feedback", err);
+      setMessage("Something went wrong");
+    }
+  };
+
+  return (
+    <div className="p-4 bg-gray-800 text-white rounded-xl space-y-3 shadow-lg">
+      <h2 className="text-xl font-bold">Submit Feedback</h2>
+
+      <label className="block">
+        Was the task completed successfully?
+        <select
+          value={wasSuccessful}
+          onChange={(e) => setWasSuccessful(e.target.value === 'true')}
+          className="ml-2 text-black"
+        >
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </label>
+
+      <button
+        className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded"
+        onClick={submitFeedback}
+      >
+        Submit
+      </button>
+
+      {message && <p className="text-sm mt-2">{message}</p>}
+    </div>
+  );
+};
+
+export default FeedbackForm;

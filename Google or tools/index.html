@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coloured Calendar</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 40px);
+      grid-template-rows: auto;
+      gap: 5px;
+    }
+    .day {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+    .label {
+      grid-column: span 7;
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .orange { background-color: #f57c00; }
+    .red    { background-color: #d32f2f; }
+    .blue   { background-color: #303f9f; }
+    .yellow { background-color: #fbc02d; color: black; }
+    .green  { background-color: #388e3c; }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="label">April 2025</div>
+    <div class="calendar">
+      <!-- Weekdays header -->
+      <div class="day">S</div>
+      <div class="day">M</div>
+      <div class="day">T</div>
+      <div class="day">W</div>
+      <div class="day">T</div>
+      <div class="day">F</div>
+      <div class="day">S</div>
+
+      <!-- Empty spaces before April 1 (Tuesday) -->
+      <div></div>
+      <div></div>
+      <div class="day orange">1</div>
+      <div class="day orange">2</div>
+      <div class="day orange">3</div>
+      <div class="day orange">4</div>
+      <div class="day orange">5</div>
+
+      <div class="day red">6</div>
+      <div class="day red">7</div>
+      <div class="day red">8</div>
+      <div class="day blue">9</div>
+      <div class="day blue">10</div>
+      <div class="day blue">11</div>
+      <div class="day blue">12</div>
+
+      <div class="day yellow">13</div>
+      <div class="day yellow">14</div>
+      <div class="day yellow">15</div>
+      <div class="day green">16</div>
+      <div class="day green">17</div>
+      <div class="day green">18</div>
+      <div class="day green">19</div>
+
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day">26</div>
+
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+    </div>
+  </div>
+</body>
+</html>

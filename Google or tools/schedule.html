@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Scheduler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f7f9fc;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Smart Scheduler Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Employee</th>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-table-body">
+      <!-- Data will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    const scheduleData = [
+      { taskName: "Data Cleaning", employee: "Alice", day: 0, startTime: "09:00", endTime: "11:00" },
+      { taskName: "ML Model Training", employee: "Bob", day: 1, startTime: "12:00", endTime: "15:00" },
+      { taskName: "Data Analysis", employee: "Charlie", day: 0, startTime: "09:00", endTime: "10:00" },
+      { taskName: "Dashboard UI Design", employee: "Ethan", day: 0, startTime: "09:00", endTime: "11:00" },
+      { taskName: "Performance Tuning", employee: "Diana", day: 2, startTime: "15:00", endTime: "17:00" },
+      { taskName: "Data Visualization", employee: "Charlie", day: 4, startTime: "15:00", endTime: "16:00" },
+    ];
+
+    const tbody = document.getElementById("schedule-table-body");
+    scheduleData.forEach(item => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.taskName}</td>
+        <td>${item.employee}</td>
+        <td>${item.day}</td>
+        <td>${item.startTime}</td>
+        <td>${item.endTime}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+    "employees": [
+      {
+        "empId": "E1",
+        "name": "Alice",
+        "skills": [{"skillName": "python", "level": 4}],
+        "availabilityPatterns": [{"type": "weekly", "days": [0,1,2,3,4], "startTime": "09:00", "endTime": "17:00"}],
+        "employmentType": "full-time",
+        "shiftPreference": "day",
+        "gender": "female"
+      },
+      {
+        "empId": "E2",
+        "name": "Bob",
+        "skills": [{"skillName": "ml", "level": 3}, {"skillName": "python", "level": 2}],
+        "availabilityPatterns": [{"type": "weekly", "days": [1,2,3,4,5], "startTime": "12:00", "endTime": "20:00"}],
+        "employmentType": "part-time",
+        "shiftPreference": "flexible",
+        "gender": "male"
+      }
+    ],
+    "tasks": [
+      {
+        "taskId": "T1",
+        "name": "Data Cleaning",
+        "requiredSkills": [{"skillName": "python", "minLevel": 3}],
+        "estimatedDurationHours": 2,
+        "priority": 3,
+        "status": "pending",
+        "dependencies": []
+      },
+      {
+        "taskId": "T2",
+        "name": "ML Model Training",
+        "requiredSkills": [{"skillName": "ml", "minLevel": 3}],
+        "estimatedDurationHours": 3,
+        "priority": 4,
+        "status": "pending",
+        "dependencies": ["T1"]
+      }
+    ],
+    "rules": [
+      {
+        "ruleType": "workingHours",
+        "value": {"day": [0,1,2,3,4], "start": "09:00", "end": "17:00"},
+        "isActive": true
+      },
+      {
+        "ruleType": "maxConsecutiveDays",
+        "value": {"days": 5},
+        "isActive": true
+      }
+    ]
+  }
+  
